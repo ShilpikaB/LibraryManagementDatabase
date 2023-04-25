@@ -1,4 +1,4 @@
-# Background
+# 1 Background
 This library relational database system comprises a virtual library with a lending and a borrowing system. The concept of a library involves borrowing books from an inventory. In this project users will be able to borrow/lend not only books, but also audiobooks, dvds, and ebooks (henceforth known as merchandise). These are the typical items one would expect to find a multi-faceted library.
 
 This system allows users to lend their own merchandise to other members. Users can lend their merchandise for free or for a specified price. This library system will allow a user to have a user account and will enable the user to borrow/lend 4 types of merchandise:
@@ -7,7 +7,7 @@ This system allows users to lend their own merchandise to other members. Users c
 - AudioBooks
 - DVDs
 
-# Design & Implementation
+# 2 Design & Implementation
 
 Below figures represent the Entity Relationship (ER) Diagram and the database tables.
 <div align="center">
@@ -28,7 +28,7 @@ The _Transactions_ entity acts as a ledger that keeps track of a transaction whi
 
 Several other relationships between the aforementioned entities are used to allow users to store information about their merchandise, borrow items, log and retrieve transaction information, update transactions, and much more.
 
-### Relational Schema (_Entities_)
+### 2.1 Relational Schema (_Entities_)
 - __Account__
 {username: STRING, first_name: STRING, last_name: STRING, email: STRING, password: STRING, phone: INTEGER, member_since 
 DATETIME, status STRING}
@@ -47,13 +47,13 @@ STRING, duration: INTEGER, price: FLOAT, status: STRING, latest_date_updated: DA
 {mid: INTEGER, genre: STRING, language: STRING, title: STRING, date_published: DATETIME, resolution: STRING, duration: INTEGER, 
 copies_available: INTEGER, production_studio: STRING, price: FLOAT, status: STRING, latest_date_updated: DATETIME}
 
-### Relational Schema (_Relations_)
+### 2.2 Relational Schema (_Relations_)
 - __AccountOwnsMerchandise__ {mid: INTEGER, username: STRING, first_date_added: DATETIME}
 - __AccountMakesTransaction__ {tid: INTEGER, borrower_username: STRING, lender_username: 
 STRING}
 - __TransactionContainsMerchandise__ {tid: INTEGER, mid: INTEGER}
 
-### Indexes
+### 2.3 Indexes
 6 User defined indexes were created
 - _merTitle_ on _Merchandise_
 - _bookAuthor_ on _Book_
@@ -64,10 +64,10 @@ STRING}
 
 All Non-clustered BTree Indexes
 
-### Views
+### 2.4 Views
 2 Views were created
 - _BorrowerViewFromTransaction_: A given borrower will see what open transactions are present for their borrowed Merchandise.
 - _LenderViewFromTransaction_: A given lender will see what open transactions are present for lended Merchandise.
 
-# SQL Script (MySQL Workbench 8.0)
+# 3 SQL Script (MySQL Workbench 8.0)
 - Link: https://github.com/ShilpikaB/LibraryManagementDatabase/tree/main/SQLQueries
