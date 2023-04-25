@@ -54,7 +54,7 @@ STRING}
 - __TransactionContainsMerchandise__ {tid: INTEGER, mid: INTEGER}
 
 ### 2.3 Indexes
-6 User defined indexes were created
+6 User defined non-clustered B-Tree indexes were created
 - _merTitle_ on _Merchandise_
 - _bookAuthor_ on _Book_
 - _audiobookAuthor_ on _Audiobook_
@@ -62,7 +62,7 @@ STRING}
 - _dvdProduction_ on _DVD_
 - _transactMerchandise_ on _Transaction_
 
-All Non-clustered BTree Indexes
+
 
 ### 2.4 Views
 2 Views were created
